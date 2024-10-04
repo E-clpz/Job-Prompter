@@ -71,4 +71,29 @@ const departments = {
     }
 }
 
+//opdracht 1
 console.log(departments);
+console.log("De afdeling Sales heeft", (departments.sales.numberOfEmployees), "medewerkers");
+console.log("Marketing is een leuke afdeling om te werken.", (departments.marketing.description));
+console.log("De afdeling Customer Service heeft", (departments["customer-service"].numberOfEmployees), "medewerkers");
+console.log("Sales is een uitdagende afdeling om te werken als Verkoopmanager.", (departments.sales.jobs[1]));
+
+//opdracht 2
+const userInput = prompt("Over welke afdeling wil je meer informatie? marketing / sales / customer-service").toLowerCase();
+console.log(userInput);
+
+if (departments[userInput]) {
+    console.log([userInput], "is een leuke afdeling om te werken. Er werken op dit moment", departments[userInput].numberOfEmployees, "medewerkers");
+} else {
+    console.error("ongeldige keuze")
+}
+
+//opdracht 3
+const title = prompt("Je koos"[userInput],"Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in");
+
+if (title >= 0 && title <= 3) {
+    console.log("Je koos", departments[userInput].jobs[title].title, "Een uitdagende rol!", departments[userInput].jobs[title].description);
+} else {
+    console.error("Ongeldige keuze");
+}
+document.getElementById('role-title').textContent = 'banaan!';
